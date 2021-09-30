@@ -1,0 +1,11 @@
+docker build -t python-flask-docker .
+(docker image ls)
+docker run -p 8080:8080 [IMAGE ID]
+(docker login)
+docker tag python-flask-docker oramshenhar/python-flask-docker
+docker push oramshenhar/python-flask-docker
+kubectl apply -f k8s-deploy-flask.yaml
+kubectl get pods
+kubectl decribe pods [pod name]
+kubectl decribe svc hello-flask-service
+(kubectl port-forward [pod name] 8080:8080)
